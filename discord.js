@@ -6,7 +6,6 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 const zipcodes = require("zipcodes");
 const CoinGecko = require("coingecko-api");
-const webhook = require("./webhook");
 const CoinGeckoClient = new CoinGecko();
 
 // , (req) => {
