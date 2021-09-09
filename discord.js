@@ -1,8 +1,5 @@
 const Discord = require("discord.js");
-const tokens = [
-  "NzQ4NzY4NjU1MjMxMjg3MzM3.X0iPJg.lRArBdPyp0dekH0bDlmoGO2H7dI",
-  "Nzg0NTUxODAzMDQ3MTE2ODEx.X8q8zg.9xzXZHqRdTTT-3ceVmwBCI8cGv0",
-];
+const tokens = ["NzQ4NzY4NjU1MjMxMjg3MzM3.X0iPJg.lRArBdPyp0dekH0bDlmoGO2H7dI"];
 const prefix = "-";
 const axios = require("axios");
 const cheerio = require("cheerio");
