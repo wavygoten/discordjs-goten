@@ -501,6 +501,48 @@ for (const token of tokens) {
 				console.log(error);
 			}
 		}
+		if (command == "indexos") {
+			const input = args[0];
+			try {
+				await axios({
+					method: "POST",
+					url: "https://traitsurfer.app/api/contractaddress",
+					headers: { "Content-Type": "application/json" },
+					data: { contractAddress: input },
+				})
+					.then((res) => {
+						if (res.data.success) {
+							const embed = new Discord.MessageEmbed()
+								.setColor("#f09719")
+								.setDescription(
+									`${input} contract has been fully indexed off opensea. Check it out at https://traitsurfer.app`
+								)
+								.setFooter(message.guild.name, message.guild.iconURL());
+							message.channel.send(embed);
+						} else {
+							const embed = new Discord.MessageEmbed()
+								.setColor("#f09719")
+								.setDescription(
+									`${input} contract indexing error, please make a ticket.`
+								)
+
+								.setFooter(message.guild.name, message.guild.iconURL());
+							message.channel.send(embed);
+						}
+					})
+					.catch((err) => {
+						const embed = new Discord.MessageEmbed()
+							.setColor("#f09719")
+							.setDescription(
+								`${input} contract indexing error, please make a ticket.`
+							)
+							.setFooter(message.guild.name, message.guild.iconURL());
+						message.channel.send(embed);
+					});
+			} catch (error) {
+				console.log(error);
+			}
+		}
 	});
 	client.login(token);
 }
